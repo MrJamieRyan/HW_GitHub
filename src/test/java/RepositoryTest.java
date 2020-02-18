@@ -10,8 +10,6 @@ public class RepositoryTest {
 
     private Repository firstrepo;
     private Commit firstcommit;
-    private Repository secondrepo;
-    private Commit secondcommit;
 
 
     @Before
@@ -25,12 +23,12 @@ public class RepositoryTest {
                 "Initial Commit",
                 210516);
 
-        this.secondrepo = new Repository(
+        Repository secondrepo = new Repository(
                 "Ashamed",
                 "This Repo Is Private Because I am Ashamed of It",
                 "private");
 
-        this.secondcommit = new Commit(
+        Commit secondcommit = new Commit(
                 "Uploading more terrible code!",
                 112233);
 
@@ -49,10 +47,8 @@ public class RepositoryTest {
 
     @Test
     public void canAddCommitToRepository(){
-        secondrepo.addCommitToRepository(secondrepo, secondcommit);
-        assertEquals(1, secondrepo.repositoryCount());
+        firstrepo.addCommitToRepository(firstrepo, firstcommit);
+        assertEquals(1, firstrepo.getCommitCount());
     }
-
-
 
 }

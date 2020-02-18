@@ -8,17 +8,19 @@ public class GitHubAccountTest {
     private GitHubAccount firstAccount;
     private GitHubAccount secondAccount;
 
-
+]
 
     @Before
     public void before(){
         this.firstAccount = new GitHubAccount("SirDavidOfGray", "David", "Free");
         this.secondAccount = new GitHubAccount("IsOnFire", "Stokes", "Pro");
     }
+
     @Test
     public void canGetUsername(){
         assertEquals("SirDavidOfGray", firstAccount.getUsername());
     }
+
     @Test
     public void canGetName(){
         assertEquals("David", firstAccount.getName());

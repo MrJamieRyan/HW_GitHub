@@ -30,16 +30,12 @@ public class GitHubAccount {
     public void downgrade (GitHubAccount secondAccount) {
         if (this.accountType.equals("Pro")) {
             this.accountType = "Free";
-        } else {
-            this.accountType = "Pro";
         }
     }
 
     public void upgrade (GitHubAccount firstAccount) {
         if (this.accountType.equals("Free")) {
             this.accountType = "Pro";
-        } else {
-            this.accountType = "Free";
         }
     }
 }

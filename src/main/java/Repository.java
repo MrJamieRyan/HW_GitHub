@@ -5,26 +5,19 @@ import java.util.HashMap;
 public class Repository {
 
     private String name;
-    private HashMap<String, Repository> repositories;
+    private ArrayList<Commit> commit;
 
     public Repository(String name, String description, String repositoryType) {
         this.name = name;
-        ArrayList<Commit> commit = new ArrayList<Commit>();
-        this.repositories = new HashMap<String, Repository>();
+        commit = new ArrayList<Commit>();
     }
 
-    public int repositoryCount() {
-        return this.repositories.size();
-    }
-
-    public void addRepositoryToCollection(Repository repository) {
-        this.repositories.put(this.name, repository);
-    }
 
     public void addCommitToRepository(Repository repository, Commit commit) {
-
+        this.commit.add(commit);
     }
 
-    public void getCommitsInRepositoryCount() {
+    public int getCommitCount() {
+        return this.commit.size();
     }
 }
